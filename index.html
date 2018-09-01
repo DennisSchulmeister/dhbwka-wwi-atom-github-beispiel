@@ -4,213 +4,233 @@
         <meta charset="utf-8" />
         <title>Atom Git-Beispiel</title>
 
-        <style>
-        @import url('https://fonts.googleapis.com/css?family=Montserrat');
+        <link rel="stylesheet" href="style.css"/>
+        <script src="script.js"></script>
 
-        html {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 13pt;
-            max-width: 50em;
-            margin: 0 auto;
-        }
+        <!--
+        Beispiel für die Coderverwaltung mit git, github und atom
 
-        h1 {
-            color: rgb(194, 44, 23);
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
-        }
+        © 2018 Dennis Schulmeister-Zimolong <dhbw@windows3.de>
+        Lizenz: Creative Commons Namensnennung 4.0 International
 
-        h2 {
-            margin-top: 2em;
-            color: rgb(22, 105, 135);
-        }
+        Sie dürfen:
 
-        p {
-            text-align: justify;
-            hyphens: auto;
-        }
+            Teilen — das Material in jedwedem Format oder Medium vervielfältigen
+            und weiterverbreiten
 
-        li {
-            margin-top: 0.5em;
-        }
+            Bearbeiten — das Material remixen, verändern und darauf aufbauen
+            und zwar für beliebige Zwecke, sogar kommerziell.
 
-        li:first-child {
-            margin-top: 0;
-        }
+        Unter folgenden Bedingungen:
 
-        .danger {
-            color: red;
-        }
-        </style>
+            Namensnennung — Sie müssen angemessene Urheber- und Rechteangaben
+            machen, einen Link zur Lizenz beifügen und angeben, ob Änderungen
+            vorgenommen wurden. Diese Angaben dürfen in jeder angemessenen Art
+            und Weise gemacht werden, allerdings nicht so, dass der Eindruck
+            entsteht, der Lizenzgeber unterstütze gerade Sie oder Ihre Nutzung
+            besonders.
+
+            Keine weiteren Einschränkungen — Sie dürfen keine zusätzlichen Klauseln
+            oder technische Verfahren einsetzen, die anderen rechtlich irgendetwas
+            untersagen, was die Lizenz erlaubt.
+
+        Es werden keine Garantien gegeben und auch keine Gewähr geleistet.
+        Die Lizenz verschafft Ihnen möglicherweise nicht alle Erlaubnisse,
+        die Sie für die jeweilige Nutzung brauchen. Es können beispielsweise
+        andere Rechte wie Persönlichkeits- und Datenschutzrechte zu beachten
+        sein, die Ihre Nutzung des Materials entsprechend beschränken.
+        -->
     </head>
-    <h1>Git, Github und Atom</h1>
-    <p>
-        Dies ist ein winzig kleines Beispiel zur Quellcodeverwaltung mit
-        Git und Github zusammen mit dem Atom Editor.
-    </p>
+        <h1>Git, Github und Atom</h1>
+        <p class="subtitle">
+            Beispiel für die Coderverwaltung mit git, github und atom
+        </p>
 
-    <h2>Git-Repository initialisieren</h2>
-    <p>
-        Zunächst brauchen wir ein neues Atom-Projekt mit ein paar
-        Quellcodedateien darin. Wie du weißt, ist ein Projekt in Atom
-        einfach nur ein Ordner auf einer Festplatte. Lege diesen nun
-        an und erzeuge eine Datei, zum Beispiel mit dem Namen
-        <tt>index.html</tt>. Danache geht es wie folgt wieter:
-    </p>
-    <ol>
-        <li>
-            Öffne den neuen Ordner in Atom mit <tt>File</tt> → <tt>Add
-            Project Folder</tt>
-        </li>
-        <li>
-            Öffne den Tab mit <tt>View</tt> → <tt>Toggle Git Tab</tt>
-        </li>
-        <li>
-            Initialisiere das Repository, indem du im Git-Tab auf
-            <tt>Initialize Repository</tt> klickst.
-        </li>
-    </ol>
+        <section id="toc" data-title="Inhaltsverzeichnis"></section>
 
-    <h2>Dein erster Commit</h2>
-    <p>
-        Innerhalb des Git-Tab tauchen die neuen Dateien in einer Liste mit
-        dem Namen <tt>Unstaged Changes</tt> auf. Damit ist gemeint, dassd
-        diese Änderungen bisher noch nicht im Repository vorhanden sind und
-        ihm auch nicht hinzugefügt werden. Um dies zu tun, gehe wie folgt
-        vor:
-    </p>
-    <ol>
-        <li>
-            Klicke oben rechts auf <tt>Stage All</tt>, um alle Änderungen
-            zu übernehmen. Alternativ kannst du auch nur einzelne Dateien
-            oder sogar nur die markierten Zeilen innerhalb einer Datei
-            übernehmen. Dadurch werden die Änderungen zum Einchecken vorgemerkt.
-        </li>
-        <li>
-            Gib unten bei <tt>Commit Message</tt> eine ausführliche Beschreibung
-            deiner Änderungen ein. Mit dem Symbol unten rechts im Textfeld
-            kannst du es dabei vergrößern, um mehr Platz zu bekommen.
-        </li>
-        <li>
-            Klicke auf <tt>Commit</tt>, um die vorgemerkten Änderungen
-            einzuchecken.
-        </li>
-    </ol>
-    <p>
-        Auf diese Weise kannst du nun nach Belieben Änderungen an deinem
-        Projekt vornehmen und diese in das git-Repository einchecken. Beachte
-        dabei aber, dass ein „Commit” immer eine abgeschlossene Änderung
-        umfassen sollte. Checke also nicht gleich jede kleinste Änderung mit
-        einem eigenen „Commit” ein. Mach die Commits aber auch nicht zugroß.
-    </p>
-    <p>
-        Die erste Zeile der Commit-Message ist ihre Überschrift. Sie sollte
-        kurz und präzise den wesentlichen Inhalt der Änderung wiedergeben.
-        Alle folgenden Zeilen sind der Inhalt der Commit-Message. Nimm dir
-        ruhig die Zeit, deine Änderungen hier ausführlich zu beschreiben.
-    </p>
-
-    <h2>Hochladen auf Github</h2>
-    <p>
-        Bisher arbeiten wir nur lokal, so dass du zwar ein git-Repository
-        auf deinem Rechner hast, außer dir aber niemand die Versionshistorie
-        deines Projekts nachvollziehen kann. Zeit dies zu ändern, und sich
-        in Github anzumelden.
-    </p>
-    <ol>
-        <li>
-            Besuche die Seite
-            <a href="https://github.com" target="_blank">github.com</a>
-            und lege einen neuen Account an, falls du noch keinen hast.
-        </li>
-        <li>
-            Abschließend klicke auf <tt>New repository</tt>, um ein neues
-            Repository auf github anzulegen.
-        </li>
-        <li>
-            Gib einen Namen und eine Beschreibung für dein neues Repository
-            ein. <span class="danger">Alle anderen Einstellungen musst du
-            so lassen, wie sie sind. Füge an dieser Stelle dem Repository
-            keine Dateien hinzu!</span>
-        </li>
-        <li>
-            Klicke nun auf <tt>Create repository</tt>.
-        </li>
-        <li>
-            Wenn alls gut ging, siehst du nun eine Anleitung, mit welchen
-            Befehlen du Quellcode hochladen kannst. Siehst du die Seite
-            nicht, lösche das Repository und lege es erneut an.
-        </li>
-        <li>
-            Klicke unter der Überschrift <tt>Quick setup</tt> auf <tt>SSH</tt>
-            und kopiere die angezeigte git-Adresse in die Zwischenablage.
-        </li>
-    </ol>
-    <p>
-        Weiter geht es im Atom Editor.
-    </p>
-    <ol>
-        <li>
-            Wähle im Menü den Punkt <tt>Packages</tt> → <tt>Git Plus</tt> →
-            <tt>Run</tt> aus.
-        </li>
-        <li>
+        <section data-title="Git-Repository initialisieren">
             <p>
-                Gib folgenden Befehl in das Befehlsfenster ein:
+                Zunächst brauchen wir ein neues Atom-Projekt mit ein paar
+                Quellcodedateien darin. Wie du weißt, ist ein Projekt in Atom
+                einfach nur ein Ordner auf einer Festplatte. Lege diesen nun
+                an und erzeuge eine Datei, zum Beispiel mit dem Namen
+                <tt>index.html</tt>. Danache geht es wie folgt wieter:
             </p>
-            <code>
-                remote add origin git@github.com/…
-            </code>
-            <p>
-                Den letzten Teil musst du dabei durch die eben kopierte URL
-                ersetzen!
-            </p>
-        </li>
-        <li>
-            <p>
-                Öffne das Git-Befehlsfenster erneut und gib folgenden Befehl
-                ein:
-            </p>
-            <code>
-                push -u origin master
-            </code>
-        </li>
-        <li>
-            Wenn du die Seite in Github neulädst, solltest du nun deinen
-            Quellcode dort sehen.
-        </li>
-    </ol>
-    <p>
-        Dein Repository ist nun mit Github verknüpft. Technisch gesehen handelt
-        es sich dabei um ein lokales Repository auf deinem Rechner sowie ein
-        entferntes Repository auf Github. Beide Repositories haben ihren eigenen
-        Versionsverlauf, den du mit der nachfolgenden Anleitung synchronisieren
-        kannst.
-    </p>
+            <ol>
+                <li>
+                    Öffne den neuen Ordner in Atom mit <tt>File</tt> → <tt>Add
+                        Project Folder</tt>
+                    </li>
+                    <li>
+                        Öffne den Tab mit <tt>View</tt> → <tt>Toggle Git Tab</tt>
+                    </li>
+                    <li>
+                        Initialisiere das Repository, indem du im Git-Tab auf
+                        <tt>Initialize Repository</tt> klickst.
+                    </li>
+                </ol>
+        </section>
 
-    <h2>Weitere Dateien anlegen und hochladen</h2>
-    <p>
-        An dieser Stelle wollen wir nun an dem Projekt weiterarbeiten und
-        zwei wichtige Dateien anlegen: <tt>README.md</tt> und <tt>LICENSE</tt>.
-        Diese Dateien haben folgende Bedeutung:
-    </p>
-    <ul>
-        <li>
-            <b><tt>README.md</tt>:</b> Diese Datei beschreibt die wichtigsten
-            Infos rund um dein Projekt. Ihr Inhalt wird daher in Github direkt
-            unter der Dateiliste angezeigt. Die Datei nutzt das
-            <a href="http://markdown.de/" target="_blank">Markdown-Format</a>.
-        </li>
-        <li>
-            <b><tt>LICENSE</tt>:</b> Diese Datei beschreibt die Lizent deines
-            Projekts. Auf
-            <a href="https://opensource.org/licenses" target="_blank">opensource.org</a>
-            findest du eine kleine Übersicht mit entsprechenden Downloadlinks.
-            <span class="danger">Beachte dabei, dass dein Code auf Github
-            für alle sichtbar ist.</span>
-        </li>
-        <li>
-            Wenn du fertig bist, checke die Änderungen wie anfangs beschrieben
-            in dein lokales Repository ein.
-        </li>
-    </ul>
+        <section data-title="Dein erster Commit">
+            <p>
+                Innerhalb des Git-Tab tauchen die neuen Dateien in einer Liste mit
+                dem Namen <tt>Unstaged Changes</tt> auf. Damit ist gemeint, dassd
+                diese Änderungen bisher noch nicht im Repository vorhanden sind und
+                ihm auch nicht hinzugefügt werden. Um dies zu tun, gehe wie folgt
+                vor:
+            </p>
+            <ol>
+                <li>
+                    Klicke oben rechts auf <tt>Stage All</tt>, um alle Änderungen
+                    zu übernehmen. Alternativ kannst du auch nur einzelne Dateien
+                    oder sogar nur die markierten Zeilen innerhalb einer Datei
+                    übernehmen. Dadurch werden die Änderungen zum Einchecken vorgemerkt.
+                </li>
+                <li>
+                    Gib unten bei <tt>Commit Message</tt> eine ausführliche Beschreibung
+                    deiner Änderungen ein. Mit dem Symbol unten rechts im Textfeld
+                    kannst du es dabei vergrößern, um mehr Platz zu bekommen.
+                </li>
+                <li>
+                    Klicke auf <tt>Commit</tt>, um die vorgemerkten Änderungen
+                    einzuchecken.
+                </li>
+            </ol>
+            <p>
+                Auf diese Weise kannst du nun nach Belieben Änderungen an deinem
+                Projekt vornehmen und diese in das git-Repository einchecken. Beachte
+                dabei aber, dass ein „Commit” immer eine abgeschlossene Änderung
+                umfassen sollte. Checke also nicht gleich jede kleinste Änderung mit
+                einem eigenen „Commit” ein. Mach die Commits aber auch nicht zugroß.
+            </p>
+            <p>
+                Die erste Zeile der Commit-Message ist ihre Überschrift. Sie sollte
+                kurz und präzise den wesentlichen Inhalt der Änderung wiedergeben.
+                Alle folgenden Zeilen sind der Inhalt der Commit-Message. Nimm dir
+                ruhig die Zeit, deine Änderungen hier ausführlich zu beschreiben.
+            </p>
+        </section>
+
+        <section data-title="Hochladen auf Github">
+            <p>
+                Bisher arbeiten wir nur lokal, so dass du zwar ein git-Repository
+                auf deinem Rechner hast, außer dir aber niemand die Versionshistorie
+                deines Projekts nachvollziehen kann. Zeit dies zu ändern, und sich
+                in Github anzumelden.
+            </p>
+            <ol>
+                <li>
+                    Besuche die Seite
+                    <a href="https://github.com" target="_blank">github.com</a>
+                    und lege einen neuen Account an, falls du noch keinen hast.
+                </li>
+                <li>
+                    Abschließend klicke auf <tt>New repository</tt>, um ein neues
+                    Repository auf github anzulegen.
+                </li>
+                <li>
+                    Gib einen Namen und eine Beschreibung für dein neues Repository
+                    ein. <span class="danger">Alle anderen Einstellungen musst du
+                        so lassen, wie sie sind. Füge an dieser Stelle dem Repository
+                        keine Dateien hinzu!</span>
+                    </li>
+                    <li>
+                        Klicke nun auf <tt>Create repository</tt>.
+                    </li>
+                    <li>
+                        Wenn alls gut ging, siehst du nun eine Anleitung, mit welchen
+                        Befehlen du Quellcode hochladen kannst. Siehst du die Seite
+                        nicht, lösche das Repository und lege es erneut an.
+                    </li>
+                    <li>
+                        Klicke unter der Überschrift <tt>Quick setup</tt> auf <tt>SSH</tt>
+                        und kopiere die angezeigte git-Adresse in die Zwischenablage.
+                    </li>
+                </ol>
+                <p>
+                    Weiter geht es im Atom Editor.
+                </p>
+                <ol>
+                    <li>
+                        Wähle im Menü den Punkt <tt>Packages</tt> → <tt>Git Plus</tt> →
+                        <tt>Run</tt> aus.
+                    </li>
+                    <li>
+                        <p>
+                            Gib folgenden Befehl in das Befehlsfenster ein:
+                        </p>
+                        <code>
+                            remote add origin git@github.com/…
+                        </code>
+                        <p>
+                            Den letzten Teil musst du dabei durch die eben kopierte URL
+                            ersetzen!
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Öffne das Git-Befehlsfenster erneut und gib folgenden Befehl
+                            ein:
+                        </p>
+                        <code>
+                            push -u origin master
+                        </code>
+                    </li>
+                    <li>
+                        Wenn du die Seite in Github neulädst, solltest du nun deinen
+                        Quellcode dort sehen.
+                    </li>
+                </ol>
+                <p>
+                    Dein Repository ist nun mit Github verknüpft. Technisch gesehen handelt
+                    es sich dabei um ein lokales Repository auf deinem Rechner sowie ein
+                    entferntes Repository auf Github. Beide Repositories haben ihren eigenen
+                    Versionsverlauf, den du mit der nachfolgenden Anleitung synchronisieren
+                    kannst.
+                </p>
+        </section>
+
+        <section data-title="Weitere Dateien anlegen und hochladen">
+            <p>
+                An dieser Stelle wollen wir nun an dem Projekt weiterarbeiten und
+                zwei wichtige Dateien anlegen: <tt>README.md</tt> und <tt>LICENSE</tt>.
+                Diese Dateien haben folgende Bedeutung:
+            </p>
+            <ol>
+                <li>
+                    <b><tt>README.md</tt>:</b> Diese Datei beschreibt die wichtigsten
+                    Infos rund um dein Projekt. Ihr Inhalt wird daher in Github direkt
+                    unter der Dateiliste angezeigt. Die Datei nutzt das
+                    <a href="http://markdown.de/" target="_blank">Markdown-Format</a>.
+                </li>
+                <li>
+                    <b><tt>LICENSE</tt>:</b> Diese Datei beschreibt die Lizent deines
+                    Projekts. Auf
+                    <a href="https://opensource.org/licenses" target="_blank">opensource.org</a>
+                    findest du eine kleine Übersicht mit entsprechenden Downloadlinks.
+                    <span class="danger">Beachte dabei, dass dein Code auf Github
+                        für alle sichtbar ist.</span>
+                    </li>
+                    <li>
+                        Wenn du fertig bist, checke die Änderungen wie anfangs beschrieben
+                        in dein lokales Repository ein.
+                    </li>
+                    <li>
+                        Klicke ganz unten rechts auf das Symbol mit den zwei Pfeilen
+                        (Pfeil hoch und runter). Daneben müsste eine „1” stehen, da es
+                        nun einen nicht hochgeladenen Commit gibt.
+                    </li>
+                    <li>
+                        Klicke nun auf <tt>Push (1)</tt>, um deine Versionshistorie auf
+                        Github hochzuladen.
+                    </li>
+                    <li>
+                        Prüfe in Github, ob deine Änderungen angekommen sind.
+                    </li>
+                </ol>
+        </section>
+
+        <!-- Navigationszeile -->
+        <nav></nav>
+    </body>
 </html>
