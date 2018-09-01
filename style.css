@@ -66,3 +66,8 @@ nav {
     display: flex;
     justify-content: space-between;
 }
+
+footer {
+    margin-top: 2em;
+    font-size: 80%;
+}
