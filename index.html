@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+        <meta charset="utf-8" />
+        <title>Atom Git-Beispiel</title>
+
+        <style>
+        @import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+        html {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 13pt;
+            max-width: 50em;
+            margin: 0 auto;
+        }
+
+        h1 {
+            color: rgb(194, 44, 23);
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+
+        h2 {
+            margin-top: 2em;
+            color: rgb(22, 105, 135);
+        }
+
+        p {
+            text-align: justify;
+            hyphens: auto;
+        }
+
+        li {
+            margin-top: 0.5em;
+        }
+
+        li:first-child {
+            margin-top: 0;
+        }
+
+        .danger {
+            color: red;
+        }
+        </style>
+    </head>
+    <h1>Git, Github und Atom</h1>
+    <p>
+        Dies ist ein winzig kleines Beispiel zur Quellcodeverwaltung mit
+        Git und Github zusammen mit dem Atom Editor.
+    </p>
+
+    <h2>Git-Repository initialisieren</h2>
+    <p>
+        Zunächst brauchen wir ein neues Atom-Projekt mit ein paar
+        Quellcodedateien darin. Wie du weißt, ist ein Projekt in Atom
+        einfach nur ein Ordner auf einer Festplatte. Lege diesen nun
+        an und erzeuge eine Datei, zum Beispiel mit dem Namen
+        <tt>index.html</tt>. Danache geht es wie folgt wieter:
+    </p>
+    <ol>
+        <li>
+            Öffne den neuen Ordner in Atom mit <tt>File</tt> → <tt>Add
+            Project Folder</tt>
+        </li>
+        <li>
+            Öffne den Tab mit <tt>View</tt> → <tt>Toggle Git Tab</tt>
+        </li>
+        <li>
+            Initialisiere das Repository, indem du im Git-Tab auf
+            <tt>Initialize Repository</tt> klickst.
+        </li>
+    </ol>
+
+    <h2>Dein erster Commit</h2>
+    <p>
+        Innerhalb des Git-Tab tauchen die neuen Dateien in einer Liste mit
+        dem Namen <tt>Unstaged Changes</tt> auf. Damit ist gemeint, dassd
+        diese Änderungen bisher noch nicht im Repository vorhanden sind und
+        ihm auch nicht hinzugefügt werden. Um dies zu tun, gehe wie folgt
+        vor:
+    </p>
+    <ol>
+        <li>
+            Klicke oben rechts auf <tt>Stage All</tt>, um alle Änderungen
+            zu übernehmen. Alternativ kannst du auch nur einzelne Dateien
+            oder sogar nur die markierten Zeilen innerhalb einer Datei
+            übernehmen. Dadurch werden die Änderungen zum Einchecken vorgemerkt.
+        </li>
+        <li>
+            Gib unten bei <tt>Commit Message</tt> eine ausführliche Beschreibung
+            deiner Änderungen ein. Mit dem Symbol unten rechts im Textfeld
+            kannst du es dabei vergrößern, um mehr Platz zu bekommen.
+        </li>
+        <li>
+            Klicke auf <tt>Commit</tt>, um die vorgemerkten Änderungen
+            einzuchecken.
+        </li>
+    </ol>
+    <p>
+        Auf diese Weise kannst du nun nach Belieben Änderungen an deinem
+        Projekt vornehmen und diese in das git-Repository einchecken. Beachte
+        dabei aber, dass ein „Commit” immer eine abgeschlossene Änderung
+        umfassen sollte. Checke also nicht gleich jede kleinste Änderung mit
+        einem eigenen „Commit” ein. Mach die Commits aber auch nicht zugroß.
+    </p>
+    <p>
+        Die erste Zeile der Commit-Message ist ihre Überschrift. Sie sollte
+        kurz und präzise den wesentlichen Inhalt der Änderung wiedergeben.
+        Alle folgenden Zeilen sind der Inhalt der Commit-Message. Nimm dir
+        ruhig die Zeit, deine Änderungen hier ausführlich zu beschreiben.
+    </p>
+
+    <h2>Hochladen auf Github</h2>
+    <p>
+        Bisher arbeiten wir nur lokal, so dass du zwar ein git-Repository
+        auf deinem Rechner hast, außer dir aber niemand die Versionshistorie
+        deines Projekts nachvollziehen kann. Zeit dies zu ändern, und sich
+        in Github anzumelden.
+    </p>
+    <ol>
+        <li>
+            Besuche die Seite
+            <a href="https://github.com" target="_blank">github.com</a>
+            und lege einen neuen Account an, falls du noch keinen hast.
+        </li>
+        <li>
+            Abschließend klicke auf <tt>New repository</tt>, um ein neues
+            Repository auf github anzulegen.
+        </li>
+        <li>
+            Gib einen Namen und eine Beschreibung für dein neues Repository
+            ein. <span class="danger">Alle anderen Einstellungen musst du
+            so lassen, wie sie sind. Füge an dieser Stelle dem Repository
+            keine Dateien hinzu!</span>
+        </li>
+        <li>
+            Klicke nun auf <tt>Create repository</tt>.
+        </li>
+        <li>
+            Wenn alls gut ging, siehst du nun eine Anleitung, mit welchen
+            Befehlen du Quellcode hochladen kannst. Siehst du die Seite
+            nicht, lösche das Repository und lege es erneut an.
+        </li>
+        <li>
+            Kopiere unter der Überschrift <tt>Quick setup</tt> die git-Adresse
+            des Repositories in die Zwischenablage.
+        </li>
+    </ol>
+    <p>
+        Weiter geht es im Atom Editor.
+    </p>
+    <ol>
+        <li>
+            Wähle im Menü den Punkt <tt>Packages</tt> → <tt>Git Plus</tt> →
+            <tt>Run</tt> aus.
+        </li>
+        <li>
+            <p>
+                Gib folgenden Befehl in das Befehlsfenster ein:
+            </p>
+            <code>
+                remote add origin git@github.com/…
+            </code>
+            <p>
+                Den letzten Teil musst du dabei durch die eben kopierte URL
+                ersetzen!
+            </p>
+        </li>
+        <li>
+            <p>
+                Öffne das Git-Befehlsfenster erneut und gib folgenden Befehl
+                ein:
+            </p>
+            <code>
+                push -u origin master
+            </code>
+        </li>
+    </ol>
+</html>
