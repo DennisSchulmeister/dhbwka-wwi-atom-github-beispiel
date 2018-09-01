@@ -48,6 +48,7 @@ class MiniTutorial {
 
         window.addEventListener("click", event => this._onLinkClicked(event));
         window.addEventListener("popstate", event => this._onHistoryChanged(event));
+        window.addEventListener("keyup", event => this._handleKeyUpEvent(event));
     }
 
     /**
@@ -83,6 +84,9 @@ class MiniTutorial {
 
         if (section === undefined) return;
         section.classList.remove("hidden");
+
+        // Scrollbalken nach oben setzen
+        window.scrollTo(0, 0);
 
         // Fenstertitel aktualisieren
         if (section.dataset.title) {
@@ -251,6 +255,32 @@ class MiniTutorial {
             history.replaceState(JSON.stringify(state), "", url);
         } else {
             history.pushState(JSON.stringify(state), "", url);
+        }
+    }
+
+    /**
+     * Umschalten der sichtbaren <section> mit Pfeil Links und Pfeil Rechts.
+     * @param {DOMEvent} event Das abgefangene KeyUp Event
+     */
+    _handleKeyUpEvent(event) {
+        if (event.ctrlKey || event.shiftKey || event.altKey || event.metaKey) return;
+
+        switch (event.code) {
+            case "ArrowLeft":
+                // Vorheriges Kapitel
+                if (this.index > 1) {
+                    this.showSection(this.index - 1);
+                }
+                break;
+            case "ArrowRight":
+            case "Enter":
+            case "Space":
+            case "KeyN":
+                // Nächstes Kapitel
+                if (this.index < this.sections.length - 1) {
+                    this.showSection(this.index + 1);
+                }
+                break;
         }
     }
 }
