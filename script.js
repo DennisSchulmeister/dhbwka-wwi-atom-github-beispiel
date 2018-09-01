@@ -131,6 +131,11 @@ class MiniTutorial {
         }
     }
 
+    /**
+     * <h2>-Überschrift in jede <section> einfügen. Die Überschrift wird
+     * dabei aus dem data-title-Attribut der <section> genommen. Das
+     * Inhaltsverzeichnis bekommt eine <h3>-Überschrift.
+     */
     insertHeadings() {
         this.sections.forEach(section => {
             let title = section.dataset.title;
@@ -250,6 +255,9 @@ class MiniTutorial {
     }
 }
 
+/**
+ * Anwendung starten, sobald das DOM bereit ist.
+ */
 window.addEventListener("load", () => {
     let mt = new MiniTutorial();
     mt.hideAllSections();
