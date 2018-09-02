@@ -1,5 +1,5 @@
 /*
- * Beispiel für die Coderverwaltung mit git, github und atom
+ * Beispiel für die Coderverwaltung mit git, Github und Atom
  *
  * © 2018 Dennis Schulmeister-Zimolong <dhbw@windows3.de>
  * Lizenz: Creative Commons Namensnennung 4.0 International
