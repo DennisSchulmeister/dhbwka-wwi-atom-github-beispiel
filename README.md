@@ -9,6 +9,9 @@ eines Projekts mit git und github verwaltet werden kann. Die eigentliche
 Anleitung befindet sich in der Datei index.html, die hierfür in einem
 Browser aufgerufen werden muss.
 
+Das Tutorial kann an folgender Stelle online betrachtet werden:
+https://www.wpvs.de/atom-git/#1
+
 Copyright
 ---------
 
