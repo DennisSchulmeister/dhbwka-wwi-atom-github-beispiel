@@ -104,3 +104,19 @@ footer {
     margin-top: 2em;
     font-size: 80%;
 }
+
+/* Druckversion: Navigation ausblenden, dafür alle <section> anzeigen */
+@media print {
+    nav > * {
+        display: none;
+        padding: 0;
+    }
+
+    .hidden {
+        display: block;
+    }
+
+    footer {
+        margin: 0;
+    }
+}
