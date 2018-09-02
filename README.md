@@ -1,5 +1,5 @@
-Beispiel für die Coderverwaltung mit git, github und atom
-=========================================================
+Anleitung für die Coderverwaltung mit GIT, GITHUB und ATOM
+==========================================================
 
 Kurzbeschreibung
 ----------------
