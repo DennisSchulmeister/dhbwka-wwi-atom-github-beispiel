@@ -41,8 +41,10 @@ class MiniTutorial {
      * Yeah! Der Konstruktor.
      */
     constructor() {
+        this.body = document.querySelector("body");
         this.sections = document.querySelectorAll("section");
         this.nav = document.querySelector("nav");
+
         this.index = 0;
         this.titlePrefix = document.title;
 
@@ -133,6 +135,11 @@ class MiniTutorial {
                 link_next.href = "#" + (index + 1);
             }
         }
+
+        // <body> sichtbar schalten, falls er noch unsichtbar ist.
+        // Dadurch wird verhindert, dass für einen kurzen Moment beim
+        // Aufruf der Seite der komplette Inhalt aufblitzt.
+        this.body.classList.remove("hidden");
     }
 
     /**
