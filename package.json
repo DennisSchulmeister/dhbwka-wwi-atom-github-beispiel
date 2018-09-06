@@ -1,0 +1,33 @@
+{
+    "name": "mt-manual",
+    "version": "1.0.0",
+    "description": "mini-tutorial.js documentation and example",
+    "author": "Dennis Schulmeister-Zimolong",
+    "license": "CC-BY",
+    "homepage": "https://github.com/DennisSchulmeister/mt-manual",
+    "bugs": {
+        "url": "https://github.com/DennisSchulmeister/mt-manual/issues"
+    },
+    "main": "index.js",
+    "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/DennisSchulmeister/mt-manual.git"
+    },
+    "keywords": [
+        "mini-tutorial.js",
+        "documentation",
+        "manual"
+    ],
+    "scripts": {
+        "clean": "node scripts/clean.js",
+        "build": "npm run clean; parcel build src/*.html --public-url . --detailed-report --experimental-scope-hoisting",
+        "watch": "npm run clean; parcel watch src/*.html --public-url . --detailed-report --experimental-scope-hoisting",
+        "start": "parcel src/index.html --open"
+    },
+    "devDependencies": {
+        "highlight.js": "^9.12.0",
+        "mini-tutorial.js": "^1.0.1",
+        "parcel-bundler": "^1.9.7",
+        "shelljs": "^0.7.8"
+    }
+}
