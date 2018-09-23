@@ -1,17 +1,17 @@
 {
     "name": "mt-manual",
     "version": "1.0.0",
-    "description": "mini-tutorial.js documentation and example",
+    "description": "GIT, GITHUB und ATOM",
     "author": "Dennis Schulmeister-Zimolong",
     "license": "CC-BY",
-    "homepage": "https://github.com/DennisSchulmeister/mt-manual",
+    "homepage": "https://github.com/DennisSchulmeister/dhbwka-wwi-atom-github-beispiel",
     "bugs": {
-        "url": "https://github.com/DennisSchulmeister/mt-manual/issues"
+        "url": "https://github.com/DennisSchulmeister/dhbwka-wwi-atom-github-beispiel/issues"
     },
     "main": "index.js",
     "repository": {
         "type": "git",
-        "url": "git+ssh://git@github.com/DennisSchulmeister/mt-manual.git"
+        "url": "git+ssh://git@github.com/DennisSchulmeister/dhbwka-wwi-atom-github-beispiel.git"
     },
     "keywords": [
         "mini-tutorial.js",
