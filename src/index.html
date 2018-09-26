@@ -2,11 +2,11 @@
 <html lang="de">
     <head>
         <meta charset="utf-8" />
-        <title>GIT, GITHUB und ATOM</title>
+        <title>GIT, GitHub und ATOM</title>
         <script src="index.js"></script>
 
         <!--
-        Anleitung für die Coderverwaltung mit GIT, GITHUB und ATOM
+        Anleitung für die Coderverwaltung mit git, GitHub und Atom
 
         © 2018 Dennis Schulmeister-Zimolong <dhbw@windows3.de>
         Lizenz: Creative Commons Namensnennung 4.0 International
@@ -41,9 +41,9 @@
     </head>
     <body class="hidden">
         <!-- Titel und Inhaltsverzeichnis -->
-        <h1>GIT, GITHUB und ATOM</h1>
+        <h1>git, GitHub und Atom</h1>
         <p class="subtitle">
-            Anleitung für die Coderverwaltung mit git, Github und Atom
+            Anleitung für die Coderverwaltung mit git, GitHub und Atom
         </p>
 
         <section id="toc" data-title="Inhaltsverzeichnis"></section>
@@ -72,18 +72,19 @@
             </ul>
             <p>
                 Nach der Installation benötigst du noch einen SSH-Key.
-                Damit kannst du dich bei Github authorisieren, ohne Benutzernamen
+                Damit kannst du dich bei GitHub authorisieren, ohne Benutzernamen
                 und Passwort einzugeben (was Atom auch nicht unterstützt).
                 Prüfe dazu, ob in deinem Benutzerverzeichnis bereits ein
-                Ordner namens <tt>.ssh</tt> mit den beiden Dateien <tt>id_rsa</tt>
-                und <tt>id_rsa.pub</tt> existiert.
+                Ordner namens <span class="fn">.ssh</span> mit den beiden
+                Dateien <span class="fn">id_rsa</span> und
+                <span class="fn">id_rsa.pub</span> existiert.
             </p>
             <ul>
                 <li>
-                    <b>Linux und macOS:</b> <tt>~/.ssh</tt>
+                    <b>Linux und macOS:</b> <span class="fn">~/.ssh</span>
                 </li>
                 <li>
-                    <b>Windows:</b> <tt>C:\Users\Benutzername\.ssh</tt>
+                    <b>Windows:</b> <span class="fn">C:\Users\Benutzername\.ssh</span>
                 </li>
             </ul>
             <p>
@@ -91,9 +92,9 @@
                 machen. Falls nein, öffne die Kommandozeile und führe folgenden
                 Befehl aus:
             </p>
-            <code>
+            <p class="cmd">
                 ssh-keygen -t rsa -C "your_email@example.com"
-            </code>
+            </p>
             <p>
                 Die E-Mailadresse musst du natürlich durch deine eigene ersetzen.
                 Die Fragen des Programms kannst du einfach mit <kbd>ENTER</kbd>
@@ -102,47 +103,47 @@
             </p>
             <ul>
                 <li>
-                    <b><tt>id_rsa</tt>:</b> Dies ist dein Private Key. Gib ihn
+                    <span class="fn">id_rsa:</span> Dies ist dein Private Key. Gib ihn
                     niemals aus den Händen!
                 </li>
                 <li>
-                    <b><tt>id_rsa.pub</tt>:</b> Dies ist dein Private Key. Ihn
-                    musst du in Github in deinem Account hinterlegen.
+                    <span class="fn">id_rsa.pub:</span> Dies ist dein Private Key. Ihn
+                    musst du in GitHub in deinem Account hinterlegen.
                 </li>
             </ul>
         </section>
 
-        <section data-title="Neues Github-Konto eröffnen und SSH-Key hinterlegen">
+        <section data-title="Neues GitHub-Konto eröffnen und SSH-Key hinterlegen">
             <p>
                 Streng genommen ist dieser Schritt gar nicht notwendig.
                 Wenn nur eine Person an einem Projekt arbeitet, reicht ein
                 lokales git-Repository völlig aus. Indem du deinen Code auf
-                github hostest, machst du es aber anderen einfacher, dazu
+                GitHub hostest, machst du es aber anderen einfacher, dazu
                 beizutragen.
             </p>
             <ol>
                 <li>
-                    Besuche <a href="https://github.com">github.com</a> und
+                    Besuche <a href="https://GitHub.com">GitHub.com</a> und
                     eröffne ein neues Konto.
                 </li>
                 <li>
                     Melde dich anschließend mit dem neuen Konto an und klicke
                     oben rechts auf deinen Avatar und dort dann auf
-                    <tt>Settings</tt>.
+                    <span class="scr">Settings</span>.
                 </li>
                 <li>
-                    Wähle links den Eintrag <tt>SSH and GPG keys</tt> aus.
+                    Wähle links den Eintrag <span class="scr">SSH and GPG keys</span> aus.
                 </li>
                 <li>
-                    Klicke auf <tt>New SSH key</tt>.
+                    Klicke auf <span class="scr">New SSH key</span>.
                 </li>
                 <li>
                     Gib dem Key einen beliebigen Namen und kopiere den
-                    Inhalt der Datei <tt>id_rsa.pub</tt> in das große
-                    Eingabefeld.
+                    Inhalt der Datei <span class="fn">id_rsa.pub</span>
+                    in das große Eingabefeld.
                 </li>
                 <li>
-                    Klicke unten auf <tt>Add SSH key</tt>.
+                    Klicke unten auf <span class="scr">Add SSH key</span>.
                 </li>
             </ol>
         </section>
@@ -153,50 +154,55 @@
                 Quellcodedateien darin. Wie du weißt, ist ein Projekt in Atom
                 einfach nur ein Ordner auf deiner Festplatte. Lege diesen nun
                 an und erzeuge eine Datei, zum Beispiel mit dem Namen
-                <tt>index.html</tt>. Danach geht es wie folgt wieter:
+                <span class="fn">index.html</span>. Danach geht es wie folgt weiter:
             </p>
             <ol>
                 <li>
-                    Öffne den neuen Ordner in Atom mit <tt>File</tt> → <tt>Add
-                        Project Folder</tt>
-                    </li>
-                    <li>
-                        Öffne den Git-Tab mit <tt>View</tt> → <tt>Toggle Git Tab</tt>
-                    </li>
-                    <li>
-                        Initialisiere das Repository, indem du im Git-Tab auf
-                        <tt>Initialize Repository</tt> klickst.
-                    </li>
-                </ol>
+                    Öffne den neuen Ordner in Atom mit
+                    <span class="scr">File</span> →
+                    <span class="scr">Add Project Folder</span>
+                </li>
+                <li>
+                    Öffne den Git-Tab mit
+                    <span class="scr">View</span> →
+                    <span class="scr">Toggle Git Tab</span>
+                </li>
+                <li>
+                    Initialisiere das Repository, indem du im Git-Tab auf
+                    <span class="scr">Initialize Repository</span> klickst.
+                </li>
+            </ol>
         </section>
 
         <section data-title="Dein erster Commit">
             <p>
                 Innerhalb des Git-Tab tauchen zunächst alle Dateien des Projekts
-                in einer Liste mit dem Namen <tt>Unstaged Changes</tt> auf.
-                Damit ist gemeint, dass es Änderungen an diesen Dateien gibt,
+                in einer Liste mit dem Namen <span class="scr">Unstaged Changes</span>
+                auf. Damit ist gemeint, dass es Änderungen an diesen Dateien gibt,
                 die bisher noch nicht im Repository vorhanden sind. Gehe daher
                 wie folgt vor:
             </p>
             <ol>
                 <li>
-                    Klicke oben rechts auf <tt>Stage All</tt>, um alle Änderungen
-                    zu übernehmen. Alternativ kannst du auch nur einzelne Dateien
-                    oder sogar nur einen Ausschnitt aus einer Datei übernehmen.
+                    Klicke oben rechts auf <span class="scr">Stage All</span>,
+                    um alle Änderungen zu übernehmen. Alternativ kannst du auch
+                    nur einzelne Dateien oder sogar nur einen Ausschnitt aus einer
+                    Datei übernehmen.
                 </li>
                 <li>
                     Die Änderungen sind nun vorgemerkt, weshalb die Dateien nun
-                    in der Liste <tt>Staged Changes</tt> stehen. Fahre fort mit
-                    Punkt 3.
+                    in der Liste <span class="scr">Staged Changes</span> stehen.
+                    Fahre fort mit Punkt 3.
                 </li>
                 <li>
-                    Gib unten bei <tt>Commit Message</tt> eine ausführliche
-                    Beschreibung ein. Mit dem Symbol unten rechts im Textfeld
-                    kannst du es in einem neuen Tab, um mehr Platz zu bekommen.
+                    Gib unten bei <span class="scr">Commit Message</span> eine
+                    ausführliche Beschreibung ein. Mit dem Symbol unten rechts
+                    im Textfeld kannst du es in einem neuen Tab, um mehr Platz
+                    zu bekommen.
                 </li>
                 <li>
-                    Klicke auf <tt>Commit</tt>, um die vorgemerkten Änderungen
-                    einzuchecken.
+                    Klicke auf <span class="scr">Commit</span>, um die vorgemerkten
+                    Änderungen einzuchecken.
                 </li>
             </ol>
             <p>
@@ -204,7 +210,7 @@
                 Projekt vornehmen und diese in das git-Repository einchecken. Beachte
                 dabei aber, dass ein Commit immer eine abgeschlossene Änderung
                 umfassen sollte. Checke also nicht gleich jede kleinste Änderung
-                ein. Mach die Commits aber auch nicht zugroß.
+                ein. Mach die Commits aber auch nicht zu groß.
             </p>
             <p>
                 Die erste Zeile der Commit-Message ist ihre Überschrift. Sie sollte
@@ -214,22 +220,22 @@
             </p>
         </section>
 
-        <section data-title="Repository mit Github verbinden">
+        <section data-title="Repository mit GitHub verbinden">
             <p>
                 Bisher arbeiten wir nur lokal, so dass du zwar ein git-Repository
                 auf deinem Rechner hast, außer dir aber niemand die Versionshistorie
                 deines Projekts nachvollziehen kann. Zeit dies zu ändern, und sich
-                in Github anzumelden.
+                in GitHub anzumelden.
             </p>
             <ol>
                 <li>
                     Besuche die Seite
-                    <a href="https://github.com" target="_blank">github.com</a>
+                    <a href="https://GitHub.com" target="_blank">GitHub.com</a>
                     und melde dich mit deinem Account an.
                 </li>
                 <li>
-                    Abschließend klicke auf <tt>New repository</tt>, um ein neues
-                    Repository anzulegen.
+                    Abschließend klicke auf <span class="scr">New repository</span>,
+                    um ein neues Repository anzulegen.
                 </li>
                 <li>
                     Gib einen Namen und eine Beschreibung für dein neues Repository
@@ -237,22 +243,23 @@
 
                     <span class="danger">
                         Alle anderen Einstellungen musst du so lassen, wie sie sind.
-                        Füge an dieser Stelle noch keine wie <tt>README.md</tt> oder
-                        <tt>LICENSE</tt> hinzu, auch wenn Github es an dieser Stelle
-                        bereits anbietet!
+                        Füge an dieser Stelle noch keine wie <span class="fn">README.md</span>
+                        oder <span class="fn">LICENSE</span> hinzu, auch wenn GitHub es an
+                        dieser Stelle bereits anbietet!
                     </span>
                 </li>
                 <li>
-                    Klicke nun auf <tt>Create repository</tt>.
+                    Klicke nun auf <span class="scr">Create repository</span>.
                 </li>
                 <li>
-                    Wenn alls gut ging, siehst du nun eine Anleitung, mit welchen
+                    Wenn alles gut ging, siehst du nun eine Anleitung, mit welchen
                     Befehlen du Quellcode hochladen kannst. Siehst du die Seite
                     nicht, lösche das Repository und lege es erneut an.
                 </li>
                 <li>
-                    Klicke unter der Überschrift <tt>Quick setup</tt> auf <tt>SSH</tt>
-                    und kopiere die angezeigte git-Adresse in die Zwischenablage.
+                    Klicke unter der Überschrift <span class="scr">Quick setup</span>
+                    auf <span class="scr">SSH</span> und kopiere die angezeigte
+                    git-Adresse in die Zwischenablage.
                 </li>
             </ol>
             <p>
@@ -260,17 +267,17 @@
             </p>
             <ol>
                 <li>
-                    Wähle im Menü den Punkt <tt>Packages</tt> → <tt>Git Plus</tt> →
-                    <tt>Run</tt> aus.
+                    Wähle im Menü den Punkt
+                    <span class="scr">Packages</span> →
+                    <span class="scr">Git Plus</span> →
+                    <span class="scr">Run</span> aus.
                 </li>
                 <li>
                     <p>
                         Gib folgenden Befehl in das Befehlsfenster ein:
                     </p>
-                    <p>
-                        <code>
-                            remote add origin git@github.com/…
-                        </code>
+                    <p class="cmd">
+                        remote add origin git@GitHub.com/…
                     </p>
                     <p>
                         Den letzten Teil musst du dabei durch die eben kopierte URL
@@ -282,21 +289,19 @@
                         Öffne das Git-Befehlsfenster erneut und gib folgenden Befehl
                         ein:
                     </p>
-                    <p>
-                        <code>
-                            push -u origin master
-                        </code>
+                    <p class="cmd">
+                        push -u origin master
                     </p>
                 </li>
                 <li>
-                    Wenn du die Seite in Github neulädst, solltest dort nun dein
+                    Wenn du die Seite in GitHub neulädst, solltest dort nun dein
                     Quellcode stehen.
                 </li>
             </ol>
             <p>
-                Dein Repository ist nun mit Github verknüpft. Technisch gesehen handelt
+                Dein Repository ist nun mit GitHub verknüpft. Technisch gesehen handelt
                 es sich dabei um ein lokales Repository auf deinem Rechner sowie ein
-                entferntes Repository auf Github. Beide Repositories haben ihren eigenen
+                entferntes Repository auf GitHub. Beide Repositories haben ihren eigenen
                 Versionsverlauf, den du mit der nachfolgenden Anleitung synchronisieren
                 kannst.
             </p>
@@ -305,25 +310,24 @@
         <section data-title="Weitere Dateien anlegen und hochladen">
             <p>
                 An dieser Stelle wollen wir etwas an dem Projekt weiterarbeiten und
-                zwei wichtige Dateien anlegen: <tt>README.md</tt> und <tt>LICENSE</tt>.
-                Diese Dateien haben folgende Bedeutung:
+                zwei wichtige Dateien anlegen: <span class="fn">README.md</span> und
+                <span class="fn">LICENSE</span>. Diese Dateien haben folgende Bedeutung:
             </p>
             <ul>
                 <li>
-                    <b><tt>README.md</tt>:</b> Diese Datei beschreibt die wichtigsten
-                    Infos rund um dein Projekt. Ihr Inhalt wird daher in Github direkt
+                    <span class="fn">README.md:</span> Diese Datei beschreibt die wichtigsten
+                    Infos rund um dein Projekt. Ihr Inhalt wird daher in GitHub direkt
                     unter der Dateiliste angezeigt. Die Datei nutzt das
                     <a href="http://markdown.de/" target="_blank">Markdown-Format</a>.
                 </li>
                 <li>
-                    <b><tt>LICENSE</tt>:</b> Diese Datei beschreibt die Lizent deines
+                    <span class="fn">LICENSE:</span> Diese Datei beschreibt die Lizent deines
                     Projekts. Auf
                     <a href="https://opensource.org/licenses" target="_blank">opensource.org</a>
                     findest du eine kleine Übersicht mit entsprechenden Downloadlinks.
 
                     <span class="danger">
-                        Beachte dabei, dass dein Code auf Github
-                        für alle sichtbar ist.
+                        Beachte dabei, dass dein Code auf GitHub für alle sichtbar ist.
                     </span>
                 </li>
             </ul>
@@ -344,11 +348,11 @@
                     nun einen nicht hochgeladenen Commit gibt.
                 </li>
                 <li>
-                    Klicke auf <tt>Push (1)</tt>, um deine Versionshistorie auf
-                    Github hochzuladen.
+                    Klicke auf <span class="scr">Push (1)</span>, um deine
+                    Versionshistorie auf GitHub hochzuladen.
                 </li>
                 <li>
-                    Prüfe in Github, ob deine Änderungen angekommen sind.
+                    Prüfe in GitHub, ob deine Änderungen angekommen sind.
                 </li>
             </ol>
         </section>
@@ -358,7 +362,7 @@
                 Wenn ihr im Team arbeitet, trägt jeder von euch zur gemeinsamen
                 Codebasis bei. Das heißt, jeder von euch entwickelt auf seinem
                 Rechner und pflegt dort eine eigene Versionshistorie, die
-                regelmäßig mit Github abgegelichen werden muss. Dabei hat
+                regelmäßig mit GitHub abgegelichen werden muss. Dabei hat
                 sich ein einfaches Vorgehen fest etabliert.
             </p>
             <p>
@@ -369,20 +373,24 @@
                 <li>
                     <b>Pull:</b> Klicke mit der rechten Maustaste im
                     Projektbereich auf den Namen deines Projekts und wähle
-                    folgenden Menüeintrag aus: <tt>Git</tt> → <tt>Git pull</tt>.
-                    Dadurch werden die neusten Änderungen von Github auf deinen
+                    folgenden Menüeintrag aus:
+                    <span class="scr">Git</span> →
+                    <span class="scr">Git pull</span>.
+                    Dadurch werden die neusten Änderungen von GitHub auf deinen
                     Rechner übertragen.
                 </li>
                 <li>
-                    <b>Commit:</b> Nun kannst du nach herzenslaune programmieren
+                    <b>Commit:</b> Nun kannst du nach Herzenslaune programmieren
                     und Änderungen in dein Repository einchecken.
                 </li>
                 <li>
                     <b>Push:</b> Schiebe deine Commits in regelmäßigen Abständen
-                    auf Github, um sie mit den anderen zu teilen. Hierfür kannst
+                    auf GitHub, um sie mit den anderen zu teilen. Hierfür kannst
                     du das Symbol unten rechts mit den zwei Pfeilen oder ebfenfalls
                     das Kontextmenü im Projektbereich nutzen. Der Menübefehl
-                    lautet dann <tt>Git</tt> → <tt>Git push</tt>.
+                    lautet dann
+                    <span class="scr">Git</span> →
+                    <span class="scr">Git push</span>.
                 </li>
             </ol>
             <p>
@@ -403,40 +411,42 @@
                 einer von beiden muss jetzt beide Versionen zusammenführen,
                 bevor alle wieder wie gewohnt arbeiten können. Dass es zu einem
                 Konflikt gekommen ist, merkst du daran, dass du deine Änderungen
-                nicht auf Github schieben kannst. Beim Versuch einen Push
-                auszuführen, erhälst du die Meldung <tt>Push rejected</tt>.
+                nicht auf GitHub schieben kannst. Beim Versuch einen Push
+                auszuführen, erhälst du die Meldung
+                <span class="scr">Push rejected</span>.
             </p>
             <p>
                 Die Situation kannst du nun wie folgt auflösen:
             </p>
             <ol>
                 <li>
-                    Führe ein <tt>Git pull</tt> aus, um die neusten Änderungen
-                    von Github herunterzuladen.
+                    Führe ein <span class="scr">Git pull</span> aus, um die neusten
+                    Änderungen von GitHub herunterzuladen.
                 </li>
                 <li>
-                    Im Git-Tab taucht nun der Bereich <tt>Merge Conflict</tt>
+                    Im Git-Tab taucht nun der Bereich
+                    <span class="scr">Merge Conflict</span>
                     auf. Dort siehst du alle Dateien, bei denen es nun Konflikte
                     gibt.
                 </li>
                 <li>
                     Öffne die Dateien durch Rechtsklick auf ihren Namen und
-                    Auswahl von <tt>Open file</tt>.
+                    Auswahl von <span class="scr">Open file</span>.
                 </li>
                 <li>
                     Schaue dir den gesamten Code an und achte auf die farblich
                     hervorgehobenen Änderungskonflikte. Oben in lila siehst du
                     immer deine lokale Version und unten in blau die Version
-                    von Github.
+                    von GitHub.
                 </li>
                 <li>
-                    Klicke auf einen der beiden <tt>Use me</tt>-Buttons, um
-                    dich für eine der beiden Versionen zu entscheiden.
+                    Klicke auf einen der beiden <span class="scr">Use me</span>-Buttons,
+                    um dich für eine der beiden Versionen zu entscheiden.
                 </li>
                 <li>
                     Wenn du alle Konflikte aufgelöst hast, führe einen Commit
-                    aus und schiebe die Änderung auf Github. Atom belegt dafür
-                    soger schon die Commitnachricht vor.
+                    aus und schiebe die Änderung auf GitHub. Atom belegt dafür
+                    sogar schon die Commit-Nachricht vor.
                 </li>
             </ol>
         </section>
@@ -444,7 +454,7 @@
         <section data-title="Bis zur Unendlichkeit und noch viel weiter">
             <p>
                 Wenn du alle Schritte bis hierhin durchgearbeitet hast,
-                kennst du nun die wichtisten Abläufe, um mit git im Team
+                kennst du nun die wichtigsten Abläufe, um mit git im Team
                 zu arbeiten. git kann aber noch viel mehr. Wenn du vor hast,
                 in größeren Projekten damit zu arbeiten, lies dir die
                 Onlineversion des wirklich hervorragenden
@@ -455,7 +465,7 @@
             <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/xQ89sePcqiU?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
             <p>
-                Und nun, viel Spaß mit git, Github und Atom!
+                Und nun, viel Spaß mit git, GitHub und Atom!
             </p>
         </section>
 
@@ -472,7 +482,7 @@
                     <td>
                         © 2018 Dennis Schulmeister-Zimolong &lt;dhbw@windows3.de&gt; <br />
                         Lizenz: Creative Commons Namensnennung 4.0 International <br />
-                        <a href="https://github.com/DennisSchulmeister/dhbwka-wwi-atom-github-beispiel" target="_blank">https://github.com/DennisSchulmeister/dhbwka-wwi-atom-github-beispiel</a>
+                        <a href="https://GitHub.com/DennisSchulmeister/dhbwka-wwi-atom-GitHub-beispiel" target="_blank">https://GitHub.com/DennisSchulmeister/dhbwka-wwi-atom-GitHub-beispiel</a>
                     </td>
                 </tr>
             </table>
